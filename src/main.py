@@ -15,7 +15,7 @@ def calculator_url_points(url):
         points += 15
     if subdomain_counter.has_excessive_subdomains(url):  # Muitos subdomínios
         points += 15
-    if shortener_checker.is_blacklisted(url):   # Encurtador conhecido
+    if shortener_checker.is_url_shortener(url):   # Encurtador conhecido
         points += 15
     if obfuscation.obfuscation_verification(url):  # Obfuscação
         points += 20

@@ -1,6 +1,8 @@
 from urllib.parse import urlparse
 
-BLACK_LIST = [
+
+# Lista de serviços de encurtamento de URL conhecidos
+URL_SHORTENERS = [
     "bit.ly",
     "t.co",         
     "tinyurl.com",
@@ -12,7 +14,15 @@ BLACK_LIST = [
     "shorturl.at"
 ]
 
-# Função para verificar se uma URL está na lista negra
-def is_blacklisted(url):
-    hostname_url = urlparse(url).hostname
-    return hostname_url in BLACK_LIST
+
+def is_url_shortener(url):
+    """Verifica se uma URL é de um serviço de encurtamento conhecido.
+    
+    Args:
+        url (str): A URL a ser analisada.
+        
+    Returns:
+        bool: True se é um encurtador conhecido, False caso contrário.
+    """
+    hostname = urlparse(url).hostname
+    return hostname in URL_SHORTENERS
