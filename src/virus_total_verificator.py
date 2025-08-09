@@ -8,43 +8,19 @@ import requests
 load_dotenv()
 API_KEY = os.getenv("API_KEY_VIRUSTOTAL")
 
-
+# Gera hash SHA-256 da URL.
 def get_url_hash(url):
-    """Gera hash SHA-256 da URL.
-    
-    Args:
-        url (str): A URL para gerar o hash.
-        
-    Returns:
-        str: Hash SHA-256 da URL.
-    """
     return hashlib.sha256(url.encode()).hexdigest()
 
-
+# Constrói a URL da API do VirusTotal.
 def build_api_url(url_hash):
-    """Constrói a URL da API do VirusTotal.
-    
-    Args:
-        url_hash (str): Hash SHA-256 da URL.
-        
-    Returns:
-        str: URL completa da API ou None se sem chave.
-    """
     if not API_KEY:
         print("Erro: Chave de API do VirusTotal não encontrada no arquivo .env")
         return None
     return f"https://www.virustotal.com/api/v3/urls/{url_hash}"
 
-
+# Função para verificar a URL no VirusTotal
 def check_url_virustotal(url):
-    """Verifica uma URL no VirusTotal.
-    
-    Args:
-        url (str): A URL a ser verificada.
-        
-    Returns:
-        dict: Resposta JSON da API do VirusTotal ou None se erro.
-    """
     try:
         url_hash = get_url_hash(url)
         api_url = build_api_url(url_hash)
@@ -65,8 +41,11 @@ def check_url_virustotal(url):
     except Exception as e:
         print(f"Erro inesperado: {e}")
         return None
-    
 
-relatorio = check_url_virustotal("https://example.com/suspect-url")
-print(relatorio['data']['attributes']['last_analysis_stats']['malicious'])
+# Função para obter a quantidade de análises maliciosas
+def get_virustotal_malicious_number(url):
+    response = check_url_virustotal(url)
+    return response['data']['attributes']['last_analysis_stats']['malicious']
+
+
 
