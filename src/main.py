@@ -1,29 +1,30 @@
-import obfuscation
-import suspect_tld_verificator
-import url_counter
-import subdomain_counter
-import shortener_checker
-import ip_formatation_indetification
+import obfuscation      # Verifica obfuscação na URL
+import suspect_tld_verificator  # Verifica TLD suspeito
+import url_counter      # Verifica comprimento da URL
+import subdomain_counter    # Conta subdomínios
+import shortener_checker    # Verifica se é encurtador
+import ip_formatation_indetification  # Verifica se há IP
 
 # Função que calcula os pontos de uma URL com base em várias verificações
 def calculator_url_points(url):
     points = 0
 
-    if url_counter.url_counter(url):
+    if url_counter.url_counter(url):  # URL longa
         points += 10
-    if suspect_tld_verificator.suspect_tld_verificator(url):
+    if suspect_tld_verificator.suspect_tld_verificator(url):  # TLD suspeito
         points += 15
-    if subdomain_counter.subdomain_alert(url):
+    if subdomain_counter.subdomain_alert(url):  # Muitos subdomínios
         points += 15
-    if shortener_checker.shortener_checker(url):    
+    if shortener_checker.is_blacklisted(url):   # Encurtador conhecido
         points += 15
-    if obfuscation.obfuscation_function_verificator(url):
+    if obfuscation.obfuscation_function_verificator(url):  # Obfuscação
         points += 20
-    if ip_formatation_indetification.ip_verification(url):
+    if ip_formatation_indetification.ip_verification(url):  # IP na URL
         points += 35
 
     return points
 
+# Classifica o nível de risco
 def verify_url(url):
     points = calculator_url_points(url)
     
@@ -40,6 +41,7 @@ def verify_url(url):
     else:  
         return "Nível 5: Risco Crítico (Acima de 70 pontos)\nDescrição: Múltiplos sinais de alerta graves foram acionados. Evite o acesso. Praticamente certo de ser phishing."
 
+# Entrada do usuário e resultado
 def main():
     url = input("Digite a URL para análise: ")
     resultado = verify_url(url)
