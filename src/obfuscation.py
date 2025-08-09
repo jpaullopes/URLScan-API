@@ -5,7 +5,7 @@ def obfuscation_verification(url):
         url (str): A URL a ser analisada.
         
     Returns:
-        bool: True se contém obfuscação, False caso contrário.
+        bool: True se contém obfuscação e False caso contrário.
     """
     return '@' in url
 

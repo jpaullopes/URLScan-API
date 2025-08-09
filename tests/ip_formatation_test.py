@@ -1,6 +1,7 @@
 import src.ip_formatation_indetification as ip_formatation
 
 # Exemplo de uso
+
 # Caso 1: URL com endereço IP
 url_com_ip = "http://192.168.0.1/login"
 resultado1 = ip_formatation.ip_verification(url_com_ip)
