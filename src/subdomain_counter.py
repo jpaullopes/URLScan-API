@@ -11,4 +11,4 @@ def subdomain_counter(url):
 
 # Função que retorna se os subdominos passaram ou são 3
 def subdomain_alert(url):
-    return subdomain_counter >= 3
+    return subdomain_counter(url) >= 3
