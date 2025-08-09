@@ -1,6 +1,14 @@
 from re import search
 
-# Função para verificar se uma URL contém um endereço IP
+
 def ip_verification(url):
-    padron =  r"(\d{1,3}\.){3}\d{1,3}"
-    return search(padron,url) is not None
+    """Verifica se uma URL contém um endereço IP.
+    
+    Args:
+        url (str): A URL a ser analisada.
+        
+    Returns:
+        bool: True se contém IP, False caso contrário.
+    """
+    ip_pattern = r"(\d{1,3}\.){3}\d{1,3}"
+    return search(ip_pattern, url) is not None
