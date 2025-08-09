@@ -9,15 +9,15 @@ import ip_formatation_indetification  # Verifica se há IP
 def calculator_url_points(url):
     points = 0
 
-    if url_counter.url_counter(url):  # URL longa
+    if url_counter.is_url_long(url):  # URL longa
         points += 10
-    if suspect_tld_verificator.suspect_tld_verificator(url):  # TLD suspeito
+    if suspect_tld_verificator.is_suspicious_tld(url):  # TLD suspeito
         points += 15
-    if subdomain_counter.subdomain_alert(url):  # Muitos subdomínios
+    if subdomain_counter.has_excessive_subdomains(url):  # Muitos subdomínios
         points += 15
     if shortener_checker.is_blacklisted(url):   # Encurtador conhecido
         points += 15
-    if obfuscation.obfuscation_function_verificator(url):  # Obfuscação
+    if obfuscation.obfuscation_verification(url):  # Obfuscação
         points += 20
     if ip_formatation_indetification.ip_verification(url):  # IP na URL
         points += 35
