@@ -45,7 +45,13 @@ def check_url_virustotal(url):
 # Função para obter a quantidade de análises maliciosas
 def get_virustotal_malicious_number(url):
     response = check_url_virustotal(url)
-    return response['data']['attributes']['last_analysis_stats']['malicious']
+    if not response or 'data' not in response:
+        return 0
+    try:
+        stats = response['data']['attributes']['last_analysis_stats']
+        return stats.get('malicious', 0)
+    except (KeyError, TypeError):
+        return 0
 
 
 
