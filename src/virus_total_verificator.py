@@ -9,7 +9,7 @@ load_dotenv()
 API_KEY = os.getenv("API_KEY_VIRUSTOTAL")
 
 
-def _get_url_hash(url):
+def get_url_hash(url):
     """Gera hash SHA-256 da URL.
     
     Args:
@@ -21,7 +21,7 @@ def _get_url_hash(url):
     return hashlib.sha256(url.encode()).hexdigest()
 
 
-def _build_api_url(url_hash):
+def build_api_url(url_hash):
     """Constrói a URL da API do VirusTotal.
     
     Args:
@@ -46,13 +46,15 @@ def check_url_virustotal(url):
         dict: Resposta JSON da API do VirusTotal ou None se erro.
     """
     try:
-        url_hash = _get_url_hash(url)
-        api_url = _build_api_url(url_hash)
+        url_hash = get_url_hash(url)
+        api_url = build_api_url(url_hash)
         
         if not api_url:
             return None
             
-        headers = {"x-apikey": API_KEY}
+        headers = {
+            "x-apikey": API_KEY
+        }
         response = requests.get(api_url, headers=headers)
         
         return response.json()
@@ -65,4 +67,6 @@ def check_url_virustotal(url):
         return None
     
 
+relatorio = check_url_virustotal("https://example.com/suspect-url")
+print(relatorio['data']['attributes']['last_analysis_stats']['malicious'])
 
