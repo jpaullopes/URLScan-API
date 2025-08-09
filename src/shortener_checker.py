@@ -1,3 +1,5 @@
+from urllib.parse import urlparse
+
 BLACK_LIST = [
     "bit.ly",
     "t.co",         
@@ -12,7 +14,5 @@ BLACK_LIST = [
 
 # Função para verificar se uma URL está na lista negra
 def is_blacklisted(url):
-    for domain in BLACK_LIST:
-        if domain in url:
-            return True
-    return False
+    hostname_url = urlparse(url).hostname
+    return hostname_url in BLACK_LIST
