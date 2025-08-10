@@ -1,5 +1,9 @@
 # 🕵️ Phishing Analyzer Tool
-![Python](https://img.shields.io/badge/python-3.8%2B-blue) ![License](https://img.shields.io/badge/license-MIT-green) ![Status](https://img.shields.io/badge/status-active-brightgreen)
+![Python](https://img.shields.io/badge/python-3.8%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+![Platform](https://img.shields.io/badge/platform-linux%20%7C%20windows-lightgrey)
+![CLI](https://img.shields.io/badge/CLI-available-orange)
 
 Analisador de URLs para detecção de características de phishing, desenvolvido como um projeto de portfólio para demonstrar habilidades em análise de segurança e desenvolvimento em Python.
 
