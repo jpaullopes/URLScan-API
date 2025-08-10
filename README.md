@@ -62,13 +62,13 @@ pip install -r requirements.txt
   - Crie um arquivo chamado `.env` na raiz do projeto.
   - Dentro dele, adicione sua chave de API do VirusTotal:
     ```
-    CHAVE_API_VIRUSTOTAL="sua_chave_secreta_aqui"
+    API_KEY_VIRUSTOTAL="sua_chave_secreta_aqui"
     ```
 
 **4. Execute o Programa**
 
 ```bash
-python3 main.py
+python3 src/main.py
 ```
 
 O programa irá solicitar que você insira a URL para análise.
