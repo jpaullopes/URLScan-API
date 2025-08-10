@@ -67,11 +67,66 @@ pip install -r requirements.txt
 
 **4. Execute o Programa**
 
+### Análise de URL Única
 ```bash
-python3 src/main.py
+python3 src/main.py --url "http://example.com"
+python3 src/main.py -u "http://example.com"
 ```
 
-O programa irá solicitar que você insira a URL para análise.
+### Análise de Múltiplas URLs
+```bash
+# Análise completa (com VirusTotal)
+python3 src/main.py --file urls_test.txt
+
+# Análise rápida (sem VirusTotal)
+python3 src/main.py --file urls_test.txt --speed
+python3 src/main.py -f urls_test.txt -s
+```
+
+### Formato do Arquivo de URLs
+Crie um arquivo de texto (ex: `urls_test.txt`) com uma URL por linha:
+```
+http://example.com
+https://suspicious-site.com
+http://bit.ly/shortlink
+```
+
+### Argumentos Disponíveis
+
+| Argumento | Forma Curta | Descrição | Obrigatório |
+|-----------|-------------|-----------|-------------|
+| `--url` | `-u` | Analisa uma única URL específica | Sim* |
+| `--file` | `-f` | Analisa múltiplas URLs de um arquivo texto | Sim* |
+| `--speed` | `-s` | Executa análise rápida (sem VirusTotal) | Não |
+| `--help` | `-h` | Mostra a mensagem de ajuda com todos os argumentos | Não |
+
+*\*Você deve usar apenas uma das opções: `--url` OU `--file`*
+
+### Obter Ajuda
+
+Para ver todos os argumentos disponíveis e exemplos de uso:
+
+```bash
+python3 src/main.py --help
+python3 src/main.py -h
+```
+
+### Exemplos de Uso
+
+```bash
+# Analisar uma URL específica
+python3 src/main.py --url "https://example.com"
+
+# Analisar URLs de um arquivo
+python3 src/main.py --file urls_list.txt
+
+# Análise rápida sem consultar VirusTotal
+python3 src/main.py --file urls_list.txt --speed
+
+# Usando formas curtas dos argumentos
+python3 src/main.py -u "https://example.com"
+python3 src/main.py -f urls_list.txt -s
+```
 
 ## 📄 Licença
 

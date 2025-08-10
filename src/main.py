@@ -1,7 +1,5 @@
-#!/usr/bin/env python3
-import functions_options as options
+import utils.functions_options as options
 import utils.args_cli as args_cli
-import argparse
 
 # Entrada do usuário e resultado
 def main():
@@ -23,7 +21,6 @@ def main():
         print(f"ERRO: {e}")
         import traceback
         traceback.print_exc()
-
 
 if __name__ == "__main__":
     main()
