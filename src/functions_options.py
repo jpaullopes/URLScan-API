@@ -36,8 +36,8 @@ def verify_url(url):
 
     return verify_url_speed(url)
 
-# Classifica o nível de risco sem API
 def verify_url_speed(url):
+    
     points = calculator_url_points(url)
 
     if points == 0:
@@ -63,7 +63,9 @@ def speed_verificator(file):
     except FileNotFoundError:
         print(f"Erro: Arquivo '{file}' não encontrado.")
 
-def slow_verificator(file):
+
+
+def file_verificator(file):
     counter = 0
     try:
         with open(file,'r') as fi:
@@ -71,6 +73,6 @@ def slow_verificator(file):
                 url = line.strip()
                 result = verify_url(url)
                 print(f"URL: {url}\nResultado: {result}\n")
-                time.sleep(15) 
+                time.sleep(15)
     except FileNotFoundError:
         print(f"Erro: Arquivo '{file}' não encontrado.")
