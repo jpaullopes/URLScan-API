@@ -1,0 +1,5 @@
+https://www.google.com
+https://gemini.google.com/u/1/app/61a2cb7bc7024541
+http://192.168.0.1/login
+https://bit.ly/teste
+https://login.conta.bancaria.seguranca.xyz.com/entrar

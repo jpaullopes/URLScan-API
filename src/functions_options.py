@@ -1,9 +1,9 @@
-import obfuscation      # Verifica obfuscação na URL
-import suspect_tld_verificator  # Verifica TLD suspeito
-import url_counter      # Verifica comprimento da URL
-import subdomain_counter    # Conta subdomínios
-import shortener_checker    # Verifica se é encurtador
-import ip_formatation_indetification  # Verifica se há IP
+import core.obfuscation as obfuscation      # Verifica obfuscação na URL
+import core.tld_checker as suspect_tld_verificator  # Verifica TLD suspeito
+import core.url_counter as url_counter      # Verifica comprimento da URL
+import core.subdomain_counter as subdomain_counter    # Conta subdomínios
+import core.shortener_checker as shortener_checker    # Verifica se é encurtador
+import core.ip_detection as ip_formatation_indetification  # Verifica se há IP
 import utils.virustotal  # Verifica no VirusTotal
 import time # Importa a biblioteca time para pausas
 
@@ -29,7 +29,7 @@ def calculator_url_points(url):
 # Classifica o nível de risco
 def verify_url(url):
 
-    virus_malicious_count = virustotal.get_virustotal_malicious_number(url)
+    virus_malicious_count = utils.virustotal.get_virustotal_malicious_number(url)
 
     if virus_malicious_count is not None and virus_malicious_count > 0:
         return "Nível 5: Risco Crítico \n Descrição: A URL foi identificada como maliciosa pelo VirusTotal. Evite o acesso."
