@@ -73,3 +73,6 @@ python3 src/main.py
 
 O programa irá solicitar que você insira a URL para análise.
 
+## 📄 Licença
+
+Este projeto está licenciado sob os termos da licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
