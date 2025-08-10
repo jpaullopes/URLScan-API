@@ -54,4 +54,3 @@ def get_virustotal_malicious_number(url):
         return 0
 
 
-

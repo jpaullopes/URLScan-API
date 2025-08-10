@@ -4,7 +4,7 @@ import url_counter      # Verifica comprimento da URL
 import subdomain_counter    # Conta subdomínios
 import shortener_checker    # Verifica se é encurtador
 import ip_formatation_indetification  # Verifica se há IP
-import virus_total_verificator  # Verifica no VirusTotal
+import utils.virustotal  # Verifica no VirusTotal
 import time # Importa a biblioteca time para pausas
 
 # Função que calcula os pontos de uma URL com base em várias verificações
@@ -29,7 +29,7 @@ def calculator_url_points(url):
 # Classifica o nível de risco
 def verify_url(url):
 
-    virus_malicious_count = virus_total_verificator.get_virustotal_malicious_number(url)
+    virus_malicious_count = virustotal.get_virustotal_malicious_number(url)
 
     if virus_malicious_count is not None and virus_malicious_count > 0:
         return "Nível 5: Risco Crítico \n Descrição: A URL foi identificada como maliciosa pelo VirusTotal. Evite o acesso."
@@ -37,7 +37,7 @@ def verify_url(url):
     return verify_url_speed(url)
 
 def verify_url_speed(url):
-    
+
     points = calculator_url_points(url)
 
     if points == 0:
@@ -65,8 +65,7 @@ def speed_verificator(file):
 
 
 
-def file_verificator(file):
-    counter = 0
+def normal_verificator(file):
     try:
         with open(file,'r') as fi:
             for line in fi:
