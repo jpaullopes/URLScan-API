@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import functions_options as options
-import args_cli
-import argparse
+import utils.args_cli as args_cli
 
 # Entrada do usuário e resultado
 def main():

@@ -4,8 +4,9 @@ import argparse
 def configure_arguments():
     
     parser = argparse.ArgumentParser(
-        description="Analisador de Phishing - Avalia URLs em busca de características maliciosas.",
-        epilog="Exemplo de uso: python3 main.py --url 'http://example.com'"
+    description="Analisa URLs para phishing.",
+    epilog="Exemplo de uso:\npython3 main.py --url 'http://example.com'\npython3 main.py --file arquivo.txt --speed",
+    formatter_class=argparse.RawTextHelpFormatter
     )
     
     group = parser.add_mutually_exclusive_group(required=True)
