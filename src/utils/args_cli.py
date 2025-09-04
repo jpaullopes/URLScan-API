@@ -1,5 +1,6 @@
 import argparse
 
+
 # Função para configurar os argumentos da linha de comando
 def configure_arguments():
     
