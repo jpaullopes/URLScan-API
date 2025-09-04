@@ -1,6 +1,5 @@
 from urllib.parse import urlparse
 
-
 # Lista de serviços de encurtamento de URL conhecidos
 URL_SHORTENERS = [
     "bit.ly",
