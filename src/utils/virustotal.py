@@ -1,8 +1,8 @@
-import os
 import hashlib
-from dotenv import load_dotenv
-import requests
+import os
 
+import requests
+from dotenv import load_dotenv
 
 # Carrega as variáveis de ambiente
 load_dotenv()

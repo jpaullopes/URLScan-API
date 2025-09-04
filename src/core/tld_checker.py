@@ -1,6 +1,5 @@
 from tldextract import extract
 
-
 # Lista de TLDs comumente usados em phishing
 SUSPICIOUS_TLDS = [
     "zip", "mov", "xyz", "top", "info", "live", "gq", 

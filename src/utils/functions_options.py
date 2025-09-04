@@ -1,11 +1,13 @@
-import core.obfuscation as obfuscation      # Verifica obfuscação na URL
-import core.tld_checker as suspect_tld_verificator  # Verifica TLD suspeito
-import core.url_counter as url_counter      # Verifica comprimento da URL
-import core.subdomain_counter as subdomain_counter    # Conta subdomínios
-import core.shortener_checker as shortener_checker    # Verifica se é encurtador
+import time  # Importa a biblioteca time para pausas
+
 import core.ip_detection as ip_formatation_indetification  # Verifica se há IP
+import core.obfuscation as obfuscation  # Verifica obfuscação na URL
+import core.shortener_checker as shortener_checker  # Verifica se é encurtador
+import core.subdomain_counter as subdomain_counter  # Conta subdomínios
+import core.tld_checker as suspect_tld_verificator  # Verifica TLD suspeito
+import core.url_counter as url_counter  # Verifica comprimento da URL
 import utils.virustotal  # Verifica no VirusTotal
-import time # Importa a biblioteca time para pausas
+
 
 # Função que calcula os pontos de uma URL com base em várias verificações
 def calculator_url_points(url):

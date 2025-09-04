@@ -1,0 +1,21 @@
+[project]
+name = "Phishing-link-analysis"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+	"tldextract",
+	"dotenv"
+]
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "pytest"
+]
+
+[tool.ruff]
+line-length = 90
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
