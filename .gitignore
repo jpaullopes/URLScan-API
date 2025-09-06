@@ -9,4 +9,9 @@ tests/__pycache__/
 .vscode
 build/
 *.egg-info/
-IMPROVEMENTS_PLAN.md
+
+# Model files
+*.joblib
+
+# Data files
+src/data/
