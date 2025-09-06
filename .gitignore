@@ -9,3 +9,4 @@ tests/__pycache__/
 .vscode
 build/
 *.egg-info/
+IMPROVEMENTS_PLAN.md
