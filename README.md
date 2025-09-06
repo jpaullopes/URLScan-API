@@ -1,4 +1,4 @@
-# Phishing Analyzer API
+# URL Scan API
 
 Uma API web desenvolvida com Flask para análise híbrida de URLs, combinando Machine Learning e regras heurísticas para detecção de phishing. Este projeto serve como um portfólio para demonstrar habilidades em desenvolvimento web, segurança da informação e Machine Learning.
 
