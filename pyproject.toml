@@ -1,7 +1,7 @@
 [project]
 name = "Phishing-link-analysis"
-version = "0.1.0"
-description = "Add your description here"
+version = "0.3.0"
+description = "API web para análise híbrida de URLs, combinando Machine Learning e regras heurísticas para detecção de phishing."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
